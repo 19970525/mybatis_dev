@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.autumn.one.dao.FriendsDao">
+
+<!--    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>-->
+
+    <sql id="sql_public">
+        <if test="id != null">
+            and g.id=#{id}
+        </if>
+        <if test="sex != null">
+            and g.sex=#{sex}
+        </if>
+    </sql>
+    
+    <select id="getFriends" parameterType="map" resultType="LoveFriendsBean">
+        select g.name,b.boyName,g.boyfriend_id
+        from beauty g
+        inner join boys b on g.boyfriend_id=b.id
+        limit #{index},#{size}
+    </select>
+
+    <select id="getSomeFriends" parameterType="map" resultType="LoveFriendsBean">
+        select g.name,b.boyName,g.boyfriend_id
+        from beauty g
+        inner join boys b on g.boyfriend_id=b.id
+        <where>
+            <include refid="sql_public"></include>
+        </where>
+    </select>
+
+    <select id="getSomeFriendsByDynamicSQL1" parameterType="map" resultType="LoveFriendsBean">
+        select g.name,b.boyName,g.boyfriend_id
+        from beauty g
+        inner join boys b on g.boyfriend_id=b.id
+        <where>
+            <choose>
+                <when test="id != null">
+                    and g.id=#{id}
+                </when>
+                <otherwise>
+                    and g.sex="女"
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+
+    <select id="getSomeFriendsByDynamicSQL2" parameterType="map" resultType="LoveFriendsBean">
+        select g.name,b.boyName,g.boyfriend_id
+        from beauty g
+        inner join boys b on g.boyfriend_id=b.id
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="id != null">
+                and g.id=#{id}
+            </if>
+            <if test="sex != null">
+                and g.sex=#{sex}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getSomeFriendsByDynamicSQL3" parameterType="list" resultType="LoveFriendsBean">
+        select g.name,b.boyName,g.boyfriend_id
+        from beauty g
+        inner join boys b on g.boyfriend_id=b.id
+        <trim prefix="where" prefixOverrides="and | or">
+        g.id in
+            <foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </trim>
+    </select>
+
+    <update id="updateBoy" parameterType="map">
+        update boys
+        <set>
+            boyName=#{boyName},userCP=#{userCP}
+        </set>
+        <where>
+            <if test="id!=null">
+                id=#{id}
+            </if>
+        </where>
+    </update>
+
+    <insert id="insertBoy" parameterType="org.autumn.one.pojo.Boys">
+        insert into boys(boyName,userCP)
+        values(#{boyName},#{userCP})
+    </insert>
+</mapper>

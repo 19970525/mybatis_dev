@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.autumn.one.dao.FriendsDao">
+
+<!--    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>-->
+
+    <sql id="sql_public">
+        <if test="id != null">
+            and g.id=#{id}
+        </if>
+        <if test="sex != null">
+            and g.sex=#{sex}
+        </if>
+    </sql>
+
+    <!-- 结果集映射 -->
+    <resultMap id="loveMapBean" type="LoveFriendsBean">
+        <result property="BBBName" column="boyName"/>
+    </resultMap>
+    <select id="getSomeFriendsByDynamicSQL1" resultMap="loveMapBean">
+        select g.name,b.boyName,g.boyfriend_id
+        from beauty g
+        inner join boys b on g.boyfriend_id=b.id
+        <where>
+            <choose>
+                <when test="id != null">
+                    and g.id=#{id}
+                </when>
+                <otherwise>
+                    and g.sex="女"
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+
+</mapper>

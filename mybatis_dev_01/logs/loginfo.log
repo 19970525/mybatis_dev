@@ -1,0 +1,13 @@
+[2021-03-22 12:27:22,156][DEBUG][org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105)][main] - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. - 
+[2021-03-22 12:30:35,088][DEBUG][org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105)][main] - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. - 
+[2021-03-22 12:31:18,234][DEBUG][org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105)][main] - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. - 
+[2021-03-22 12:32:47,864][DEBUG][org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105)][main] - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. - 
+[2021-03-22 12:35:25,687][DEBUG][org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105)][main] - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. - 
+[2021-03-22 12:42:13,390][DEBUG][org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105)][main] - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. - 
+[2021-03-22 12:46:54,406][DEBUG][org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105)][main] - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. - 
+[2021-03-22 12:53:15,652][DEBUG][org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105)][main] - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. - 
+[2021-03-22 12:53:51,163][DEBUG][org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105)][main] - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. - 
+[2021-03-22 12:54:22,383][DEBUG][org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105)][main] - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. - 
+[2021-03-22 18:29:00,907][DEBUG][org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105)][main] - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. - 
+[2021-03-22 22:28:31,670][DEBUG][org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105)][main] - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. - 
+[2021-03-22 23:45:11,774][DEBUG][org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105)][main] - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter. - 

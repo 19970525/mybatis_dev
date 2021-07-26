@@ -1,0 +1,6 @@
+# Project exclude paths
+/excelDemo/target/
+/jspTest/target/
+/mybatis_dev_01/target/
+/mybatis_dev_02/target/
+/mybatis_dev_03/target/
