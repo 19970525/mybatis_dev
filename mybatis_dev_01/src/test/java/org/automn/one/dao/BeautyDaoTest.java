@@ -14,14 +14,25 @@ import java.util.List;
 public class BeautyDaoTest {
 
     @Test
-    public void test(){
+    public void test() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         BeautyDao beautyDao = sqlSession.getMapper(BeautyDao.class);
         List<Beauty> beautyList = beautyDao.getBeautyList("岩");
 
         for (Beauty beauty : beautyList) {
             System.out.println(beauty);
+            System.out.println(beauty);
+            System.out.println(beauty);
+            System.out.println(beauty);
+            System.out.println(beauty);
+            System.out.println(beauty);
+            System.out.println(beauty);
+            System.out.println(beauty);
+            System.out.println(beauty);
+            System.out.println(beauty);
+            System.out.println(beauty);
         }
+
 
         sqlSession.close();
 
@@ -38,6 +49,7 @@ public class BeautyDaoTest {
 
         sqlSession2.close();
     }
+
 }
 
 
