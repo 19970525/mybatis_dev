@@ -1,3 +1,4 @@
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.log4j.Logger;
 import org.autumn.one.bean.LoveFriendsBean;
@@ -8,6 +9,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author pengjun
@@ -20,13 +22,18 @@ public class FriendsTest {
     @Test
     public void selectLoveFriends() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
-        FriendsDao mapper = sqlSession.getMapper(FriendsDao.class);
+//        FriendsDao mapper = sqlSession.getMapper(FriendsDao.class);
+//
+//        HashMap<String, Integer> limitMap = new HashMap<>();
+//        Integer page = 2;
+//        limitMap.put("index", page*(page-1));
+//        limitMap.put("size", 5);
+//        ArrayList<LoveFriendsBean> friends = mapper.getFriends(limitMap);
 
-        HashMap<String, Integer> limitMap = new HashMap<>();
-        Integer page = 2;
-        limitMap.put("index", page*(page-1));
-        limitMap.put("size", 5);
-        ArrayList<LoveFriendsBean> friends = mapper.getFriends(limitMap);
+        int currentPage = 1;  //第几页
+        int pageSize = 5;  //每页显示几个
+        RowBounds rowBounds = new RowBounds((currentPage - 1) * pageSize, pageSize);
+        List<LoveFriendsBean> friends = sqlSession.selectList("org.autumn.one.dao.FriendsDao.getFriends", null, rowBounds);
 
         for (LoveFriendsBean lf : friends) {
           log.info(lf);

@@ -15,11 +15,16 @@
         </if>
     </sql>
     
-    <select id="getFriends" parameterType="map" resultType="LoveFriendsBean">
+<!--    <select id="getFriends" parameterType="map" resultType="LoveFriendsBean">-->
+<!--        select g.name,b.boyName,g.boyfriend_id-->
+<!--        from beauty g-->
+<!--        inner join boys b on g.boyfriend_id=b.id-->
+<!--        limit #{index},#{size}-->
+<!--    </select>-->
+    <select id="getFriends" resultType="LoveFriendsBean">
         select g.name,b.boyName,g.boyfriend_id
         from beauty g
         inner join boys b on g.boyfriend_id=b.id
-        limit #{index},#{size}
     </select>
 
     <select id="getSomeFriends" parameterType="map" resultType="LoveFriendsBean">

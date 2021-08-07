@@ -1,9 +1,8 @@
 package org.autumn.one.dao;
 
-import org.autumn.one.bean.LoveFriendsBean;
+import org.autumn.one.pojo.Beauty;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * @author pengjun
@@ -13,6 +12,8 @@ public interface FriendsDao {
 //    @Select("select g.name,b.boyName,g.boyfriend_id from beauty g inner join boys b on g.boyfriend_id=b.id where b.id=#{id}")
 
 
-    ArrayList<LoveFriendsBean> getSomeFriendsByDynamicSQL1(HashMap map);
+//    ArrayList<LoveFriendsBean> getSomeFriendsByDynamicSQL1(HashMap map);
+
+    ArrayList<Beauty> getBeauty();
 
 }

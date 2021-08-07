@@ -13,6 +13,7 @@
 
     <typeAliases>
         <package name="org.autumn.one.bean"/>
+        <package name="org.autumn.one.pojo"/>
     </typeAliases>
 
     <environments default="test">
